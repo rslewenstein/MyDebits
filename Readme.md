@@ -11,11 +11,17 @@ The main purpose of this software is just to consume an API in .NET Core, using 
 
 Back end (API)
 1 - Enter the MyDebits.WebAPI (project) directory.
-2 - run the dotnet run command
+2 - run the command:
+
+    dotnet run
 
 Front end (Vue.JS)
 1 - Enter the mydebits.app (project) directory
-2 - Run the npm run serve command
+2 - Run the command:
+
+    npm run serve
+
+
 
 
 ###(Português)
@@ -27,9 +33,13 @@ O intuíto principal deste software é apenas consumir uma API em .NET Core, uti
 
 Back end (API)
 1 - Entre no diretório(projeto) MyDebits.WebAPI.
-2 - execute o comando dotnet run
+2 - execute o comando 
+
+    dotnet run
 
 Front end (Vue.JS)
 1 - Entre no diretório(projeto) mydebits.app
-2 - Execute o comando npm run serve
+2 - Execute o comando: 
+
+    npm run serve
 
