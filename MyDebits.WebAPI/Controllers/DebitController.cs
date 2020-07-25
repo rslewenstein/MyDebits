@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MyDebits.Domain;
 using MyDebits.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace MyDebits.WebAPI.Controllers
 {
@@ -32,6 +33,18 @@ namespace MyDebits.WebAPI.Controllers
             if (debit == null) return BadRequest("Debit not found!");
 
             return Ok(debit);
+        }
+
+        [HttpPost]
+        public IActionResult Post(Debit debit)
+        {
+            _rep.Add(debit);
+            if(_rep.SaveChanges())
+            {
+                return Created($"/api/debit/{debit.Id}");
+            }
+
+            return BadRequest("Debit not found!");
         }
     }
 }
