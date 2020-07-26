@@ -35,16 +35,16 @@ namespace MyDebits.WebAPI.Controllers
             return Ok(debit);
         }
 
-        [HttpPost]
-        public IActionResult Post(Debit debit)
-        {
-            _rep.Add(debit);
-            if(_rep.SaveChanges())
-            {
-                return Created($"/api/debit/{debit.Id}");
-            }
+        // [HttpPost]
+        // public IActionResult Post(Debit debit)
+        // {
+        //     _rep.Add(debit);
+        //     if(_rep.SaveChanges())
+        //     {
+        //         return Created($"/api/debit/{debit.Id}");
+        //     }
 
-            return BadRequest("Debit not found!");
-        }
+        //     return BadRequest("Debit not found!");
+        // }
     }
 }

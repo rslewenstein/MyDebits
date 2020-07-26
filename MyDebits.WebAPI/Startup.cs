@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyDebits.Repository;
-// using AutoMapper;
+using AutoMapper;
 
 namespace MyDebits.WebAPI
 {
@@ -24,7 +24,8 @@ namespace MyDebits.WebAPI
             services.AddDbContext<MyDebitsContext>(context => 
                 context.UseSqlite(Configuration.GetConnectionString("Default")));
 
-           // services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            //services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddCors(); //resolvendo problema cors
             services.AddMvc(); //resolvendo problema cors
