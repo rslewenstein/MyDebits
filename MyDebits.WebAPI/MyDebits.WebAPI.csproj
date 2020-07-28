@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MyDebits.Repository\MyDebits.Repository.csproj" />
     <ProjectReference Include="..\MyDebits.Domain\MyDebits.Domain.csproj" />
+    <ProjectReference Include="..\MyDebits.Dto\MyDebits.Dto.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
