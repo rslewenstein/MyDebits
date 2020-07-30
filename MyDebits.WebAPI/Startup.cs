@@ -24,8 +24,7 @@ namespace MyDebits.WebAPI
             services.AddDbContext<MyDebitsContext>(context => 
                 context.UseSqlite(Configuration.GetConnectionString("Default")));
 
-            //services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddAutoMapper(typeof(Startup));
+            //services.AddAutoMapper(typeof(Startup));
 
             services.AddCors(); //resolvendo problema cors
             services.AddMvc(); //resolvendo problema cors
