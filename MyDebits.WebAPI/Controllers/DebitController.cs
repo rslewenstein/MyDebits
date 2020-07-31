@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using MyDebits.Domain;
 using MyDebits.Repository;
-using MyDebits.Dto;
 using Microsoft.EntityFrameworkCore;
 
 namespace MyDebits.WebAPI.Controllers
@@ -47,6 +46,40 @@ namespace MyDebits.WebAPI.Controllers
             }
 
             return BadRequest("Debit not found!");
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, Debit model)
+        {
+            var debit = _rep.GetDebitById(id);
+
+            if (debit == null) return BadRequest("Debit not found!");
+            
+            _rep.Update(model);
+
+            if(_rep.SaveChanges())
+            {
+                return Ok(debit);
+            } 
+
+            return BadRequest("Debit was not updated!");
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var debit = _rep.GetDebitById(id);
+
+            if (debit == null) return BadRequest("Debit not found!");
+            
+            _rep.Delete(debit);
+
+            if(_rep.SaveChanges())
+            {
+                return Ok(debit);
+            } 
+
+            return BadRequest("Debit was not deleted!");
         }
 
     }
