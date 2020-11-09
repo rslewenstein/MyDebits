@@ -26,14 +26,12 @@ namespace MyDebits.WebAPI
 
             //services.AddAutoMapper(typeof(Startup));
 
-            services.AddCors(); //resolvendo problema cors
-            services.AddMvc(); //resolvendo problema cors
+            services.AddCors();
 
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllowAllOrigins",
-                    builder => builder.AllowAnyOrigin());
-            }); //resolvendo problema cors
+            services.AddCors(options => options.AddPolicy("ApiCorsPolicy", builder =>
+    {
+        builder.WithOrigins("http://localhost:8080").AllowAnyMethod().AllowAnyHeader();
+    }));
 
 
             services.AddScoped<IMyDebitsRepository, MyDebitsRepository>();
@@ -49,7 +47,7 @@ namespace MyDebits.WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors(option => option.AllowAnyOrigin()); //resolvendo problema cors
+            app.UseCors("ApiCorsPolicy");
 
             app.UseHttpsRedirection();
 

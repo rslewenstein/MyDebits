@@ -1,19 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <ItemGroup>
-    <ProjectReference Include="..\MyDebits.Repository\MyDebits.Repository.csproj" />
-    <ProjectReference Include="..\MyDebits.Domain\MyDebits.Domain.csproj" />
+    <ProjectReference Include="..\MyDebits.Repository\MyDebits.Repository.csproj"/>
+    <ProjectReference Include="..\MyDebits.Domain\MyDebits.Domain.csproj"/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.sqlite" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.0"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.sqlite" Version="3.1.0"/>
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.1.0"/>
   </ItemGroup>
-
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-
-
 </Project>
