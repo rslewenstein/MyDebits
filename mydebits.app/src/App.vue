@@ -89,7 +89,6 @@ export default {
 
   methods:{
     salvar(){
-
       Debit.save(this.debit).then(respost => {
         alert('New debit was save!')
         console.log(respost.data)

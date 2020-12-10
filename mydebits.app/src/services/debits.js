@@ -6,7 +6,7 @@ export default{
         return http.get('debit')
     },
 
-    save:(deb) => {
-        return http.post('debit', deb)
+    save:(debit) => {
+        return http.post('debit', debit)
     }
 }
