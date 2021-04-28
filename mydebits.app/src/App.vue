@@ -69,10 +69,10 @@ export default {
     return {
       debit: {
         description: '',
-        categoryId: '',
+        categoryId: 0,
         dateDebit: '',
         debitValue: '',
-        paymentMethodId: '',
+        paymentMethodId: 0,
         quota: ''
       },
 
@@ -92,7 +92,8 @@ export default {
       Debit.save(this.debit).then(respost => {
         alert('New debit was save!')
         console.log(respost.data)
-      })
+     })
+      //alert(this.debit.description)
     }
   }
 }

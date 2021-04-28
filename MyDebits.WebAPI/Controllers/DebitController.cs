@@ -37,7 +37,7 @@ namespace MyDebits.WebAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Debit debit)
+        public IActionResult Post([FromBody] Debit debit)
         {
             _rep.Add(debit);
             if(_rep.SaveChanges())
