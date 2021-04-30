@@ -29,9 +29,9 @@ namespace MyDebits.WebAPI
             services.AddCors();
 
             services.AddCors(options => options.AddPolicy("ApiCorsPolicy", builder =>
-    {
-        builder.WithOrigins("http://localhost:8080").AllowAnyMethod().AllowAnyHeader();
-    }));
+            {
+                builder.WithOrigins("http://localhost:8080/").AllowAnyMethod().AllowAnyHeader();
+            }));
 
 
             services.AddScoped<IMyDebitsRepository, MyDebitsRepository>();

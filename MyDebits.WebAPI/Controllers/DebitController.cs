@@ -37,6 +37,7 @@ namespace MyDebits.WebAPI.Controllers
         }
 
         [HttpPost]
+        [Route("debit")]
         public IActionResult Post([FromBody] Debit debit)
         {
             _rep.Add(debit);
